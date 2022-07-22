@@ -1,0 +1,137 @@
+:root {
+  --negro: #000;
+  --rojo: #DC143C;
+  --azul: #6495ED;
+  --azulOscuro: #483D8B;
+  --anaranjado:  	 	#FFA500;
+  --verde: #2E8B57;
+  --azulClaro: #B0E0E6;
+  --blanco: #fff;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: var(--fuente);
+  font-size: 1.6rem;
+  line-height: 2;
+  color: var(--blanco);
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.item {
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+}
+
+.negro {
+  color: var(--negro);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(14, 1fr);
+  grid-template-areas: "header"
+                        "menu"
+                        "hero"
+                        "hero"
+                        "hero"
+                        "main"
+                        "main"
+                        "main"
+                        "banner"
+                        "banner"
+                        "extra"
+                        "extra"
+                        "image"
+                        "image";
+}
+
+.header {
+  background-color: var(--negro);
+  grid-area: header;
+}
+
+.menu {
+  background-color: var(--rojo);
+  grid-area: menu;
+}
+
+.hero {
+  background-color: var(--azul);
+  grid-area: hero;
+}
+
+.main {
+  background-color: var(--azulOscuro);
+  grid-area: main;
+}
+
+.banner {
+  background-color: var(--anaranjado);
+  grid-area: banner;
+}
+
+.extra {
+  background-color: var(--verde);
+  grid-area: extra;
+}
+
+.image {
+  background-color: var(--azulClaro);
+  grid-area: image;
+}
+
+/*Tablet*/
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(13, 1fr);
+    grid-template-areas: "header header header header"
+                          "hero hero hero hero"
+                          "hero hero hero hero"
+                          "hero hero hero hero"
+                          "hero hero hero hero"
+                          "menu main main main"
+                          "menu main main main"
+                          "menu main main main"
+                          "menu main main main"
+                          "menu banner banner banner"
+                          "menu banner banner banner"
+                          "menu extra extra image"
+                          "menu extra extra image";
+  }
+}
+
+/*Desktop*/
+@media (min-width: 1200px) {
+  .grid {
+    grid-template-areas: "header menu menu menu"
+                          "hero hero hero hero"
+                          "hero hero hero hero"
+                          "hero hero hero hero"
+                          "hero hero hero hero"
+                          "hero hero hero hero"
+                          "hero hero hero hero"
+                          "main main . image"
+                          "main main . image"
+                          "main main . extra"
+                          "main main . extra"
+                          "banner banner banner banner"
+                          "banner banner banner banner";
+  }
+}
